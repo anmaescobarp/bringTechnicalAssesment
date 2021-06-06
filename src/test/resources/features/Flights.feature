@@ -7,7 +7,7 @@ Feature: Book Flights on Ryanair.com
     |  Lisbon   |Paris Beauvais| 2021-06-06  |2021-07-20|     2      |      1       |
     And Change the departure date and return date from lateral scroll
     |DepartureDate|ReturnDate|
-    | 2021-12-06 |2021-12-12|
+    | 2021-08-06 |2021-09-22|
     When I click on Value Fare
     And I fill the passengers info out
     |IsAdult|Title|FirstName|LastName|
@@ -16,7 +16,7 @@ Feature: Book Flights on Ryanair.com
     |No     |     |Ines     |Marcal      |
     Then I confirm the desired Seats
       |Seats|
-      |09D|
-      |09E|
-      |09F|
+      |10D|
+      |10E|
+      |10F|
     And The user is taken the to the confirmation flights page

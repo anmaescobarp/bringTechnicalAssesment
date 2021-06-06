@@ -8,6 +8,8 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
+import java.util.concurrent.TimeUnit;
+
 public class SelectionPlaneSeats extends PageObject {
 
     private WebDriverWait wait;
@@ -42,7 +44,8 @@ public class SelectionPlaneSeats extends PageObject {
     }
 
     public void SelectDesiredSeat (String desiredSeat){
-        By desiredSeatToSelect = By.id("seat-"+desiredSeat); // #seat-30D
+        webDriver.manage().timeouts().implicitlyWait(6, TimeUnit.NANOSECONDS);
+        By desiredSeatToSelect = By.id("seat-"+desiredSeat);
         WebElement desiredSeatElement = webDriver.findElement(desiredSeatToSelect);
         wait.until(ExpectedConditions.invisibilityOf(desiredSeatElement));
         wait.until(ExpectedConditions.visibilityOf(desiredSeatElement));

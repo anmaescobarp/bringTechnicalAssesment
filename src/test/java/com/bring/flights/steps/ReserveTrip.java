@@ -18,7 +18,7 @@ public class ReserveTrip extends ScenarioSteps {
     SelectionPlaneSeats selectionPlaneSeats = new SelectionPlaneSeats(getDriver());
 
     /**
-     * Enter Trip Airports (From - To)
+     * Click on Login Later button
      *
      */
     public void ClickOnLoginLater() {
@@ -26,23 +26,36 @@ public class ReserveTrip extends ScenarioSteps {
     }
 
     /**
-     * Enter Trip Airports (From - To)
+     * Fill out the passengers info
      *
-     * @param passengersInfo Departure Airport
+     * @param passengersInfo Passenger info List
      */
     public void FillOutPassengersInfo(List<List<String>> passengersInfo) throws InterruptedException {
         reserveTripPage.FillOutPassengersInfo(passengersInfo);
     }
 
+    /**
+     * Click on Continue to select seats
+     *
+     */
     public void ClickOnContinueToSelectSeats(){
         reserveTripPage.ClickOnContinue();
     }
 
+    /**
+     * Close PopUp to select Seats
+     *
+     */
     public void ClosePopUpSeats()
     {
         selectionPlaneSeats.ClosePopUpSeats();
     }
 
+    /**
+     * Selection of desired seats to passengers
+     *
+     * @param desiredSeats Desired seats to select on the flights
+     */
     public void SelectionDesiredSeats(List<List<String>> desiredSeats)
     {
         System.out.println(desiredSeats);
@@ -52,14 +65,26 @@ public class ReserveTrip extends ScenarioSteps {
         }
     }
 
+    /**
+     * Click on Next Flight
+     *
+     */
     public void ClickOnNextFlightButton() {
         selectionPlaneSeats.ClickOnNextFlightButton();
     }
 
+    /**
+     * Click on Continue button to confirm the flights
+     *
+     */
     public void ClickOnContinueButton(){
         selectionPlaneSeats.ClickOnContinueButton();
     }
 
+    /**
+     * Close Avoid Crowds Pop up to go to confirmation flights page
+     *
+     */
     public void CloseAvoidCrowsPopUp() throws InterruptedException {
         selectionPlaneSeats.CloseAvoidCrowsPopUp();
     }

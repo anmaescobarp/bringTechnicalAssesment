@@ -59,25 +59,25 @@ public class SearchTrips extends ScenarioSteps {
         findTripsPage.chooseChildrenNumber(childrenAmount);
     }
     /**
-     * Go to Ryanair webpage
+     * Click on search button
      */
     public void ClickOnSearchButton() {
         findTripsPage.clickOnSearchButton();
     }
     /**
-     * Go to Ryanair webpage
+     * Select Departure Flight date
      */
-    public void SelectDepartureFlight(String date) {
+    public void SelectDepartureFlightDate(String date) {
         selectTrip.chooseDepartureFlight(date);
     }
     /**
-     * Go to Ryanair webpage
+     * Select Return Flight date
      */
-    public void SelectReturnFlight(String date){
+    public void SelectReturnFlightDate(String date){
         selectTrip.chooseReturnFlight(date);
     }
     /**
-     * Go to Ryanair webpage
+     * Click on Values fares button
      */
     public void ClickOnValuesFaresButton() {
         selectTrip.clickOnValueFaresButton();

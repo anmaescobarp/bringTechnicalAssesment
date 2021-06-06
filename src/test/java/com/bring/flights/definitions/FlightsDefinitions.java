@@ -30,8 +30,8 @@ public class FlightsDefinitions {
     @And("^Change the departure date and return date from lateral scroll$")
     public void ChangeTheDepartureDateAndReturnDateFromLateralScrol(DataTable dtFlightDates) throws Throwable {
         List<List<String>> listDesiredFlights = dtFlightDates.asLists();
-        searchTrip.SelectDepartureFlight(listDesiredFlights.get(1).get(0));
-        searchTrip.SelectReturnFlight(listDesiredFlights.get(1).get(1));
+        searchTrip.SelectDepartureFlightDate(listDesiredFlights.get(1).get(0));
+        searchTrip.SelectReturnFlightDate(listDesiredFlights.get(1).get(1));
         searchTrip.ClickOnValuesFaresButton();
     }
 

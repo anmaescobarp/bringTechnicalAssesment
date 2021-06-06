@@ -85,17 +85,17 @@ public class ReserveTripPage extends PageObject {
 
     }
 
-    public int IndexOfTitlePassenger(String title){
+    public void ClickOnContinue(){
+        webDriver.findElement(continueButton).click();
+    }
+
+    private int IndexOfTitlePassenger(String title){
         switch (title){
             case "Mr": return 1;
             case "Mrs": return 2;
             case "Ms": return 3;
             default:return 0;
         }
-    }
-
-    public void ClickOnContinue(){
-        webDriver.findElement(continueButton).click();
     }
 
 }

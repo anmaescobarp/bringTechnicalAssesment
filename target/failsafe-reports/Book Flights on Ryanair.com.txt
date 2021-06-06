@@ -1,0 +1,14 @@
+-------------------------------------------------------------------------------
+Test set: Book Flights on Ryanair.com
+-------------------------------------------------------------------------------
+Tests run: 1, Failures: 0, Errors: 1, Skipped: 0, Time elapsed: 61.801 s <<< FAILURE! - in Book Flights on Ryanair.com
+EMPTY_NAME(Book Flights on Ryanair.com)  Time elapsed: 61.801 s  <<< ERROR!
+org.openqa.selenium.ElementClickInterceptedException: 
+element click intercepted: Element <button _ngcontent-ryanair-seats-c98="" id="seat-09D" class="ng-star-inserted seatmap__seat seatmap__seat--selected">...</button> is not clickable at point (748, 20). Other element would receive the click: <div _ngcontent-ryanair-seats-c34="" class="header__center"></div>
+  (Session info: chrome=91.0.4472.77)
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
+System info: host: 'DESKTOP-FS5PVBN', ip: '10.211.55.4', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_291'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 91.0.4472.77, chrome: {chromedriverVersion: 90.0.4430.24 (4c6d850f087da..., userDataDir: C:\Users\ANDRES~1\AppData\L...}, goog:chromeOptions: {debuggerAddress: localhost:60590}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
+Session ID: d49fc589a7c1c049cb95a6759aeef5a2
+
