@@ -2,6 +2,6 @@
 * You have to install Maven with its JDK version 8 on the computer to be able to execute the project.
 * To execute the project, you need to open CMD or propmt, go to the path which contains the automation project and write the following sentence: mvn clean verify.
 * After the execution, when it's completed all the steps and it's passed you can get the report file to see, in a better way, the screenshots and the steps which were executed. To get that report you need to go to the automation project and open the this path:target\site\serenity and open the file:"index.html".
-* In the folder: src/test/resources/features/Flights.features you can get the scenario which contains all the requerimients of the assessment.
+* In the folder:  src/test/resources/features/Flights.features you can get the scenario which contains all the requerimients of the assessment. That file contains the data which will be entered during the execution, please bear in mind to get the seats which are avaialable because if they're unavailable so the automation project will fail.
 * The projetc was made with Mavenm Serenity BDD, cucumber and page object pattern. El proyecto se hizo con MAVEN, serenity BDD, cucumber y page object pattern.
 * Please Keep in mind the internet connection and the velocity of loading all the components and web page because those problems could affect the execution of the project and get an unexpected issue.
