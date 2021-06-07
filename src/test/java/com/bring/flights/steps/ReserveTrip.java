@@ -55,9 +55,14 @@ public class ReserveTrip extends ScenarioSteps {
      * Selection of desired seats to passengers
      *
      * @param desiredSeats Desired seats to select on the flights
+     * @param isDepartFlight flag to know what seats I'll select
      */
-    public void SelectionDesiredSeats(List<List<String>> desiredSeats)
+    public void SelectionDesiredSeats(List<List<String>> desiredSeats, boolean isDepartFlight)
     {
+        if(!isDepartFlight)
+        {
+            selectionPlaneSeats.WaitUntilSpinnerSeatsLost();
+        }
         System.out.println(desiredSeats);
         for(int i=1; i<desiredSeats.size(); i++){
             System.out.println(desiredSeats.get(i).get(0));

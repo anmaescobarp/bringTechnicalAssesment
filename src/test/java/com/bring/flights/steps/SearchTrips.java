@@ -44,7 +44,7 @@ public class SearchTrips extends ScenarioSteps {
      * @param departDate Depart date
      * @param returnDate Return date
      */
-    public void ChooseDepartAndReturnDates(String departDate, String returnDate) {
+    public void ChooseDepartAndReturnDates(String departDate, String returnDate) throws InterruptedException {
         findTripsPage.chooseDepartDate(departDate);
         findTripsPage.chooserReturnDate(returnDate);
     }

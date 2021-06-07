@@ -7,6 +7,10 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
+
+import java.time.LocalDate;
+import java.util.Locale;
+
 import static org.hamcrest.CoreMatchers.containsString;
 import static org.hamcrest.MatcherAssert.assertThat;
 
@@ -52,17 +56,30 @@ public class FindTrips extends PageObject{
     By childrenPassengersNumber = By.cssSelector("ry-counter[data-ref=\"passengers-picker__children\"] div[data-ref=\"counter.counter__value\"]");
     // Search button
     By searchButton = By.cssSelector("button[data-ref=\"flight-search-widget__cta\"]");
-
+    // datePicker component
+    By datePickerComponent = By.xpath("//ry-tooltip[contains(@class,\"fsw-search-tooltip\")]");
 
     //Methods
+
+    private void selectDesiredMonth(String date) throws InterruptedException {
+        LocalDate convertedDate = LocalDate.parse(date);
+        String month = convertedDate.getMonth().toString().toLowerCase(Locale.ROOT);
+        month = month.substring(0,1).toUpperCase(Locale.ROOT) + month.substring(1,3);
+        By desiredMonth = By.xpath("//month-toggle//div[contains(@class, \"m-toggle__scrollable-item\")]//div[contains(text(),\""+month+"\")]");
+        wait.until(ExpectedConditions.presenceOfAllElementsLocatedBy(desiredMonth));
+        wait.until(ExpectedConditions.visibilityOf(webDriver.findElement(datePickerComponent)));
+        System.out.println("Lista de months--->"+webDriver.findElements(desiredMonth).size());
+        webDriver.findElements(desiredMonth).get(0).click();
+    }
+
 
     /**
      * Date picker selection
      *
      * @param date desired date to select on depart field or return date
      */
-    private void selectDesiredDate(String date)
-    {
+    private void selectDesiredDate(String date) throws InterruptedException {
+        selectDesiredMonth(date);
         By datePicker = By.cssSelector("div[data-id=\"" + date + "\"]");
         wait.until(ExpectedConditions.presenceOfAllElementsLocatedBy(datePicker));
         webDriver.findElement(datePicker).click();
@@ -109,7 +126,7 @@ public class FindTrips extends PageObject{
      *Choose Depart date
      * @param date Date to select
      */
-    public void chooseDepartDate(String date)  {
+    public void chooseDepartDate(String date) throws InterruptedException {
         wait.until(ExpectedConditions.visibilityOf(webDriver.findElement(departDateField)));
         wait.until(ExpectedConditions.elementToBeClickable(departDateField));
         webDriver.findElement(departDateField).click();
@@ -119,7 +136,7 @@ public class FindTrips extends PageObject{
      *Choose Return date
      * @param date Date to select
      */
-    public void chooserReturnDate(String date) {
+    public void chooserReturnDate(String date) throws InterruptedException {
         wait.until(ExpectedConditions.visibilityOf(webDriver.findElement(returnDateField)));
         wait.until(ExpectedConditions.elementToBeClickable(returnDateField));
         webDriver.findElement(returnDateField).click();

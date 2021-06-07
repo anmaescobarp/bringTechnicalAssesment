@@ -51,9 +51,9 @@ public class FlightsDefinitions {
     public void IConfirmTheDesiredSeats(DataTable dtDesiredSeats) throws Throwable {
         reserveTrip.ClosePopUpSeats();
         List<List<String>> listDesiredFlights = dtDesiredSeats.asLists();
-        reserveTrip.SelectionDesiredSeats(listDesiredFlights);
+        reserveTrip.SelectionDesiredSeats(listDesiredFlights,true);
         reserveTrip.ClickOnNextFlightButton();
-        reserveTrip.SelectionDesiredSeats(listDesiredFlights);
+        reserveTrip.SelectionDesiredSeats(listDesiredFlights, false);
         reserveTrip.ClickOnContinueButton();
     }
 
