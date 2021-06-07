@@ -1,8 +1,0 @@
-com\bring\flights\page_object\ReserveTripPage.class
-com\bring\flights\page_object\SelectTrip.class
-com\bring\flights\steps\SearchTrips.class
-com\bring\flights\page_object\FindTrips.class
-com\bring\flights\page_object\SelectionPlaneSeats.class
-com\bring\flights\Runner\TestRunner.class
-com\bring\flights\steps\ReserveTrip.class
-com\bring\flights\definitions\FlightsDefinitions.class
